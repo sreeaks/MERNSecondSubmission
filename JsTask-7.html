@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>JS Task 7</title>
+    <style>
+        .main-div {
+        margin-top: 15px;
+        display: grid;
+        place-items: center;
+        }
+
+        .p-click {
+        font-size: xx-large;
+        color: rgb(0, 0, 179);
+        }
+
+        .button-div {
+        margin-top: 0;
+        }
+
+        button {
+        width: 59px;
+        font-size: medium;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <video class="video-control" src="train-video.mp4" loop></video>
+      <p class="p-click">Click the following buttons to handle animation</p>
+      <div class="button-div">
+        <button class="start-button">Start</button>
+        <button class="stop-button">Stop</button>
+      </div>
+    </div>
+    <script src="https://unpkg.com/freezeframe"></script>
+    
+  </body>
+  <script>
+    let control = document.querySelector(".video-control");
+
+    let start = document.querySelector(".start-button");
+    let stop = document.querySelector(".stop-button");
+
+    let startFun = function () {
+    control.play();
+    };
+
+    let stopFun = function () {
+    control.pause();
+    };
+
+    start.addEventListener("click", startFun);
+    stop.addEventListener("click", stopFun);
+  </script>
+</html>
